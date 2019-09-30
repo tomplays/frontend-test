@@ -1,0 +1,20 @@
+ <div class="container">
+   <form class="search-form" (submit)="onSubmit($event)">
+    <div class=" row  align-items-center">
+      <div class="col-auto">
+        <i class="fas fa-search h4 text-body"></i>
+      </div>
+      <!--end of col-->
+      <div class="col">
+        <input class="form-control form-control-lg form-control-borderless" placeholder="Giphy keywords"
+          name="query" [(ngModel)]="query" #input required id="query">
+      </div>
+      <!--end of col-->
+      <div class="col-auto">
+        <button class="btn btn-lg btn-success" type="submit" [disabled]="input.invalid">Search</button>
+      </div>
+      <!--end of col-->
+    </div>
+  </form>
+</div>
+

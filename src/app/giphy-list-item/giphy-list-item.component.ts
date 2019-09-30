@@ -8,7 +8,7 @@ import { GiphyApiService } from '../services/giphy-api.service';
 })
 export class GiphyListItemComponent implements OnInit {
 
-  @Input() gif: {id: string};
+  @Input() gif: {id: string, title:string};
 
   constructor(private giphyApiService: GiphyApiService) { }
   ngOnInit() {}

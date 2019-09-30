@@ -1,10 +1,25 @@
 <div class="container">
-  <div class="row">
-    <div class="" *ngFor="let gif of giphyResults">
-      <app-giphy-list-item [gif]="gif"></app-giphy-list-item>
+    <div class="row nav-top" *ngIf="page > 1 " >
+
+      <nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Results page #{{page}} for "{{searchTerm}}"</li>
+        </ol>
+      </nav>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let gif of giphyResults | paginate: { itemsPerPage: GIPHY_SEARCH_LIMIT, currentPage: page, totalItems: resultCount}">
+        <app-giphy-list-item [gif]="gif"></app-giphy-list-item>
+      </div>
+
+    </div>
+
+  <pagination-controls
+  (pageChange)="onPageChange($event)"
+  class="pagination d-flex justify-content-center"
+  responsive="true"
+  autoHide="true" *ngIf="resultCount>0"></pagination-controls>
+
 </div>
-
-
 
