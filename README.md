@@ -15,6 +15,11 @@ Please create your branch with a commit by feature then submit your pull request
 
 
 
+Note:
+
+  The concept of 'tag' search doesn't exist on Giphy api (except for 'random' search).
+  "Multiple-tags" search is in fact a fulltext search (string)
+  "layer of unit test and e2e" feature is included into angularCli 
 
 
 
